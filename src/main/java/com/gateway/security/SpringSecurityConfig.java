@@ -111,7 +111,8 @@ public class SpringSecurityConfig {
 				.pathMatchers(HttpMethod.POST, "/api/respuestas/respuestas/arreglar/").hasAnyRole("INTERVENTOR")
 				.pathMatchers(HttpMethod.GET, "/api/respuestas/respuestas/ver/todas/username/**",
 						"/api/respuestas/respuestas/ver/todas/pregunta/proyecto/**",
-						"/api/respuestas/respuestas/proyecto/**", "/api/respuestas/formularios/ver/proyecto/**")
+						"/api/respuestas/respuestas/proyecto/**", "/api/respuestas/formularios/ver/proyecto/**",
+						"/api/respuestas/respuestas/obtener/todas")
 				.hasAnyRole("ADMIN", "MODERATOR")
 				.pathMatchers(HttpMethod.GET, "/api/respuestas/formularios/ver/username/respondido/",
 						"/api/respuestas/respuestas/ver/una/username/**")
