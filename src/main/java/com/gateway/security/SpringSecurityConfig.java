@@ -120,7 +120,8 @@ public class SpringSecurityConfig {
 				.hasAnyRole("ADMIN", "MODERATOR", "USER")
 				.pathMatchers(HttpMethod.PUT, "/api/respuestas/formularios/finalizar-usuario/")
 				.hasAnyRole("ADMIN", "MODERATOR", "USER")
-				.pathMatchers(HttpMethod.DELETE, "/api/respuestas/respuestas/eliminar/proyecto/todo/**")
+				.pathMatchers(HttpMethod.DELETE, "/api/respuestas/respuestas/eliminar/proyecto/todo/**",
+						"/api/respuestas/respuestas/eliminar-preguntas-problema")
 				.hasRole("INTERVENTOR")
 
 				// SUSCRIPCIONES -- CHECK
