@@ -14,6 +14,7 @@ public class SpringSecurityConfig {
 	@Autowired
 	private JwtAuthenticationFilter authenticationFilter;
 
+	// Arreglo
 	@Bean
 	public SecurityWebFilterChain configure(ServerHttpSecurity http) {
 		return http.authorizeExchange().pathMatchers("/api/autenticacion/oauth/token").permitAll()
