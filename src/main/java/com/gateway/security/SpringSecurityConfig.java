@@ -14,6 +14,7 @@ public class SpringSecurityConfig {
 	@Autowired
 	private JwtAuthenticationFilter authenticationFilter;
 
+	// Arreglo
 	@Bean
 	public SecurityWebFilterChain configure(ServerHttpSecurity http) {
 		return http.authorizeExchange().pathMatchers("/api/autenticacion/oauth/token").permitAll()
@@ -112,7 +113,7 @@ public class SpringSecurityConfig {
 				.pathMatchers(HttpMethod.GET, "/api/respuestas/respuestas/ver/todas/username/**",
 						"/api/respuestas/respuestas/ver/todas/pregunta/proyecto/**",
 						"/api/respuestas/respuestas/proyecto/**", "/api/respuestas/formularios/ver/proyecto/**",
-						"/api/respuestas/respuestas/obtener/todas")
+						"/api/respuestas/respuestas/obtener/todas","/api/respuestas/respuestas/ver-todas")
 				.hasAnyRole("ADMIN", "MODERATOR")
 				.pathMatchers(HttpMethod.GET, "/api/respuestas/formularios/ver/username/respondido/",
 						"/api/respuestas/respuestas/ver/una/username/**")
