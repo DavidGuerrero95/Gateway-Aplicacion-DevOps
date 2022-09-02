@@ -210,6 +210,7 @@ public class SpringSecurityConfig {
                 .hasAnyRole("USER", "MODERATOR", "ADMIN")
                 .pathMatchers(HttpMethod.DELETE, "/reto/usuarios/contactos/eliminar/**").hasAnyRole("USER", "MODERATOR", "ADMIN")
                 .pathMatchers(HttpMethod.DELETE, "/reto/usuarios/usuarios/eliminar/**").hasRole("INTERVENTOR")
+                .pathMatchers("/reto/usuarios/**").hasRole("INTERVENTOR")
 
 
                 /*
