@@ -174,3 +174,45 @@ spring:
           - Path=/api/testing/**
         filters:
           - StripPrefix=2
+      - id: autenticacion-reto
+        uri: lb://autenticacion-reto
+        predicates:
+          - Path=/reto/autenticacion/**
+        filters:
+          - StripPrefix=2
+          - RewriteResponseHeader=X-Response-Red, , password=[^&]+, password=***
+          - name: CircuitBreaker
+            args:
+              name: usuarios
+              statusCode: 500
+              fallbackUri: forward:/reto/autenticacion/metodoalternativo/
+      - id: usuarios-reto
+        uri: lb://usuarios-reto
+        predicates:
+          - Path=/reto/usuarios/**
+        filters:
+          - StripPrefix=2
+      - id: zonas-reto
+        uri: lb://zonas-reto
+        predicates:
+          - Path=/reto/zonas/**
+        filters:
+          - StripPrefix=2
+      - id: sensores-reto
+        uri: lb://sensores-reto
+        predicates:
+          - Path=/reto/sensores/**
+        filters:
+          - StripPrefix=2
+      - id: events-retos
+        uri: lb://events-retos
+        predicates:
+          - Path=/reto/events/**
+        filters:
+          - StripPrefix=2
+      - id: historico-retos
+        uri: lb://historico-retos
+        predicates:
+          - Path=/reto/historico/**
+        filters:
+          - StripPrefix=2
