@@ -213,11 +213,19 @@ public class SpringSecurityConfig {
                 .pathMatchers("/reto/usuarios/**").hasRole("INTERVENTOR")
 
                 // ZONAS RETO FLUTTER
-                .pathMatchers(HttpMethod.POST,"/reto/zonas/zonas/crear").hasRole("INTERVENTOR")
-                .pathMatchers(HttpMethod.GET,"/reto/zonas/zonas/listar", "/reto/zonas/zonas/numero/delitos/**",
+                .pathMatchers(HttpMethod.POST, "/reto/zonas/zonas/crear").hasRole("INTERVENTOR")
+                .pathMatchers(HttpMethod.GET, "/reto/zonas/zonas/listar", "/reto/zonas/zonas/numero/delitos/**",
                         "/numero/delitos/zonas/buscar/**")
                 .hasAnyRole("USER", "MODERATOR", "ADMIN")
 
+                // SENSORES RETO FLUTTER
+                .pathMatchers(HttpMethod.POST, "/reto/sensores/posteinteligente/crear").hasRole("INTERVENTOR")
+                .pathMatchers(HttpMethod.GET, "/reto/sensores/posteinteligente/habilitar-deshabilitar/**",
+                        "/reto/sensores/posteinteligente/existe/**")
+                .hasAnyRole("INTERVENTOR")
+                .pathMatchers(HttpMethod.GET, "/reto/sensores/posteinteligente/listar")
+                .hasAnyRole("USER", "MODERATOR", "ADMIN")
+                .pathMatchers(HttpMethod.DELETE, "/reto/sensores/posteinteligente/eliminar/**").hasRole("INTERVENTOR")
 
 
                 /*
