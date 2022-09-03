@@ -223,10 +223,17 @@ public class SpringSecurityConfig {
                 .pathMatchers(HttpMethod.POST, "/reto/sensores/posteinteligente/crear").hasRole("INTERVENTOR")
                 .pathMatchers(HttpMethod.GET, "/reto/sensores/posteinteligente/habilitar-deshabilitar/**",
                         "/reto/sensores/posteinteligente/existe/**")
-                .hasAnyRole("INTERVENTOR")
+                .hasRole("INTERVENTOR")
                 .pathMatchers(HttpMethod.GET, "/reto/sensores/posteinteligente/listar")
                 .hasAnyRole("USER", "MODERATOR", "ADMIN")
                 .pathMatchers(HttpMethod.DELETE, "/reto/sensores/posteinteligente/eliminar/**").hasRole("INTERVENTOR")
+
+                // EVENTOS RETO FLUTTER
+                .pathMatchers(HttpMethod.GET,"/reto/events/eventos/listar", "/reto/events/eventos/listar/usuario/**",
+                        "/reto/events/eventos/listar/poste/**", "/reto/events/eventos/listar/zona/**", "/reto/events/eventos/listar/status/**")
+                .hasAnyRole("USER", "MODERATOR", "ADMIN")
+                .pathMatchers(HttpMethod.POST,"/reto/events/crear/usuario/**", "/reto/events/anexar/usuarios/**").hasAnyRole("USER", "MODERATOR", "ADMIN")
+                .pathMatchers(HttpMethod.PUT,"/reto/events/crear/poste/**", "/reto/events/anexar/poste/**").hasRole("INTERVENTOR")
 
 
                 /*
