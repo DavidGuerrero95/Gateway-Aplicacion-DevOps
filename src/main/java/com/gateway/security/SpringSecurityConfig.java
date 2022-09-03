@@ -214,6 +214,7 @@ public class SpringSecurityConfig {
 
                 // ZONAS RETO FLUTTER -
                 .pathMatchers(HttpMethod.POST, "/reto/zonas/zonas/crear").hasRole("INTERVENTOR")
+                .pathMatchers(HttpMethod.DELETE, "/reto/zonas/zonas/eliminar/**").hasRole("INTERVENTOR")
                 .pathMatchers(HttpMethod.GET, "/reto/zonas/zonas/listar", "/reto/zonas/zonas/numero/delitos/**",
                         "/numero/delitos/zonas/buscar/**")
                 .hasAnyRole("USER", "MODERATOR", "ADMIN")
