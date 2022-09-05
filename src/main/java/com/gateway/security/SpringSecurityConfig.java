@@ -231,10 +231,11 @@ public class SpringSecurityConfig {
 
                 // EVENTOS RETO FLUTTER
                 .pathMatchers(HttpMethod.GET,"/reto/events/eventos/listar", "/reto/events/eventos/listar/usuario/**",
-                        "/reto/events/eventos/listar/poste/**", "/reto/events/eventos/listar/zona/**", "/reto/events/eventos/listar/status/**")
+                        "/reto/events/eventos/listar/poste/**", "/reto/events/eventos/listar/zona/**", "/reto/events/eventos/listar/status/**",
+                        "/reto/events/files/obtener/**")
                 .hasAnyRole("USER", "MODERATOR", "ADMIN")
-                .pathMatchers(HttpMethod.POST,"/reto/events/crear/usuario/**", "/reto/events/anexar/usuarios/**").hasAnyRole("USER", "MODERATOR", "ADMIN")
-                .pathMatchers(HttpMethod.PUT,"/reto/events/crear/poste/**", "/reto/events/anexar/poste/**").hasRole("INTERVENTOR")
+                .pathMatchers(HttpMethod.POST,"/reto/events/crear/usuario/**", "/reto/events/files/anexar/usuarios/**").hasAnyRole("USER", "MODERATOR", "ADMIN")
+                .pathMatchers(HttpMethod.PUT,"/reto/events/crear/poste/**", "/reto/events/files/anexar/poste/**").hasRole("INTERVENTOR")
 
 
                 /*
