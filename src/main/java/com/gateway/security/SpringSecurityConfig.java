@@ -234,8 +234,9 @@ public class SpringSecurityConfig {
                         "/reto/events/eventos/listar/poste/**", "/reto/events/eventos/listar/zona/**", "/reto/events/eventos/listar/status/**",
                         "/reto/events/files/obtener/**")
                 .hasAnyRole("USER", "MODERATOR", "ADMIN")
-                .pathMatchers(HttpMethod.POST,"/reto/events/crear/usuario/**", "/reto/events/files/anexar/usuarios/**").hasAnyRole("USER", "MODERATOR", "ADMIN")
-                .pathMatchers(HttpMethod.PUT,"/reto/events/crear/poste/**", "/reto/events/files/anexar/poste/**").hasRole("INTERVENTOR")
+                .pathMatchers(HttpMethod.POST,"/reto/events/eventos/crear/usuario/**", "/reto/events/files/anexar/usuarios/**").hasAnyRole("USER", "MODERATOR", "ADMIN")
+                .pathMatchers(HttpMethod.PUT,"/reto/events/eventos/crear/poste/**", "/reto/events/files/anexar/poste/**").hasRole("INTERVENTOR")
+                .pathMatchers(HttpMethod.DELETE, "/reto/events/eventos/eliminar/**").hasRole("INTERVENTOR")
 
 
                 /*
