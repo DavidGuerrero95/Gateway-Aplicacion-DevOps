@@ -233,14 +233,17 @@ public class SpringSecurityConfig {
                 .pathMatchers("/reto/sensores/**").hasRole("INTERVENTOR")
 
                 // EVENTOS RETO FLUTTER
-                .pathMatchers(HttpMethod.GET,"/reto/events/eventos/listar", "/reto/events/eventos/listar/usuario/**",
+                .pathMatchers(HttpMethod.GET, "/reto/events/eventos/listar", "/reto/events/eventos/listar/usuario/**",
                         "/reto/events/eventos/listar/poste/**", "/reto/events/eventos/listar/zona/**", "/reto/events/eventos/listar/status/**",
                         "/reto/events/files/obtener/**")
                 .hasAnyRole("USER", "MODERATOR", "ADMIN")
-                .pathMatchers(HttpMethod.POST,"/reto/events/eventos/crear/usuario/**", "/reto/events/files/anexar/usuarios/**").hasAnyRole("USER", "MODERATOR", "ADMIN")
-                .pathMatchers(HttpMethod.PUT,"/reto/events/eventos/crear/poste/**", "/reto/events/files/anexar/poste/**").hasRole("INTERVENTOR")
+                .pathMatchers(HttpMethod.POST, "/reto/events/eventos/crear/usuario/**", "/reto/events/files/anexar/usuarios/**").hasAnyRole("USER", "MODERATOR", "ADMIN")
+                .pathMatchers(HttpMethod.PUT, "/reto/events/eventos/crear/poste/**", "/reto/events/files/anexar/poste/**").hasRole("INTERVENTOR")
                 .pathMatchers(HttpMethod.DELETE, "/reto/events/eventos/eliminar/**").hasRole("INTERVENTOR")
                 .pathMatchers("/reto/events/**").hasRole("INTERVENTOR")
+
+                // HISTORICOS RETO FLUTTER
+                .pathMatchers(HttpMethod.GET, "/reto/historicos/historico/listar", "/reto/historicos/historico/listar/**").hasAnyRole("USER", "MODERATOR", "ADMIN")
 
                 /*
                  * .pathMatchers("/api/interventor/**", "/api/gamificacion/**",
