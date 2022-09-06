@@ -211,8 +211,8 @@ spring:
         filters:
           - StripPrefix=2
       - id: historico-retos
-        uri: lb://historico-retos
+        uri: lb://historical-retos
         predicates:
-          - Path=/reto/historico/**
+          - Path=/reto/historicos/**
         filters:
           - StripPrefix=2
