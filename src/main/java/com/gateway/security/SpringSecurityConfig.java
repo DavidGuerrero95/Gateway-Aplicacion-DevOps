@@ -193,6 +193,8 @@ public class SpringSecurityConfig {
                 .pathMatchers(HttpMethod.DELETE, "/api/interventor/interventor/eliminarUsuarioDefinitivamente/",
                         "/api/interventor/interventor/eliminarProyectoDefinitivamente/", "/api/interventor/version/eliminar/**")
                 .hasRole("INTERVENTOR")
+
+                // PYTHON
                 .pathMatchers("/api/aggregation/**", "/api/testing/**").permitAll()
 
                 // AUTENTICACION RETO FLUTTER
