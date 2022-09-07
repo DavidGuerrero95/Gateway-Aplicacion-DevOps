@@ -209,9 +209,8 @@ public class SpringSecurityConfig {
                 .pathMatchers(HttpMethod.PUT, "/reto/usuarios/usuarios/editar/**", "/reto/usuarios/usuarios/editar-contrasena/**",
                         "/reto/usuarios/contactos/editar/**", "/reto/usuarios/usuarios/codigo/**")
                 .hasAnyRole("USER", "MODERATOR", "ADMIN")
-                .pathMatchers(HttpMethod.DELETE, "/reto/usuarios/contactos/eliminar/**").hasAnyRole("USER", "MODERATOR", "ADMIN")
+                .pathMatchers(HttpMethod.DELETE, "/reto/usuarios/contactos/eliminar/**","/reto/usuarios/eliminar-prueba/**").hasAnyRole("USER", "MODERATOR", "ADMIN")
                 .pathMatchers(HttpMethod.DELETE, "/reto/usuarios/usuarios/eliminar/**").hasRole("INTERVENTOR")
-                .pathMatchers("/reto/usuarios/**").hasRole("INTERVENTOR")
                 .pathMatchers("/reto/usuarios/**").hasRole("INTERVENTOR")
 
                 // ZONAS RETO FLUTTER -
