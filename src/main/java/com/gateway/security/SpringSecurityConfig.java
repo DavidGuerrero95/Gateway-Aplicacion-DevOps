@@ -207,14 +207,14 @@ public class SpringSecurityConfig {
                 .pathMatchers(HttpMethod.POST, "/reto/usuarios/registro/enviar", "/reto/usuarios/registro/confirmar/**").permitAll()
                 .pathMatchers(HttpMethod.POST, "/reto/usuarios/contactos/crear/**").hasAnyRole("USER", "MODERATOR", "ADMIN")
                 .pathMatchers(HttpMethod.POST, "/reto/usuarios/registro/primer-usuario/").hasRole("INTERVENTOR")
-                .pathMatchers(HttpMethod.GET, "/reto/usuarios/usuarios/existe/**").permitAll()
+                .pathMatchers(HttpMethod.GET, "/reto/usuarios/usuarios/existe/**", "/reto/usuarios/usuarios/preguntar/usuarioExiste").permitAll()
                 .pathMatchers(HttpMethod.GET, "/reto/usuarios/usuarios/listar/").hasAnyRole("INTERVENTOR", "MODERATOR", "ADMIN")
                 .pathMatchers(HttpMethod.GET, "/reto/usuarios/usuarios/encontrar/**")
                 .hasAnyRole("USER", "MODERATOR", "ADMIN")
                 .pathMatchers(HttpMethod.PUT, "/reto/usuarios/usuarios/editar/**", "/reto/usuarios/usuarios/editar-contrasena/**",
                         "/reto/usuarios/contactos/editar/**", "/reto/usuarios/usuarios/codigo/**")
                 .hasAnyRole("USER", "MODERATOR", "ADMIN")
-                .pathMatchers(HttpMethod.DELETE, "/reto/usuarios/contactos/eliminar/**","/reto/usuarios/eliminar-prueba/**").hasAnyRole("USER", "MODERATOR", "ADMIN")
+                .pathMatchers(HttpMethod.DELETE, "/reto/usuarios/usuarios/eliminar-prueba/**").hasAnyRole("USER", "ADMIN")
                 .pathMatchers(HttpMethod.DELETE, "/reto/usuarios/usuarios/eliminar/**").hasRole("INTERVENTOR")
                 .pathMatchers("/reto/usuarios/**").hasRole("INTERVENTOR")
 
@@ -241,14 +241,13 @@ public class SpringSecurityConfig {
                         "/reto/events/eventos/listar/poste/**", "/reto/events/eventos/listar/zona/**", "/reto/events/eventos/listar/status/**",
                         "/reto/events/files/obtener/**")
                 .hasAnyRole("USER", "MODERATOR", "ADMIN")
-                .pathMatchers(HttpMethod.POST, "/reto/events/eventos/crear/usuario/**", "/reto/events/files/anexar/usuarios/**").hasAnyRole("USER", "MODERATOR", "ADMIN")
+                .pathMatchers(HttpMethod.POST, "/reto/events/eventos/crear/usuario/**", "/reto/events/files/anexar/usuarios/**").hasAnyRole("USER", "ADMIN")
                 .pathMatchers(HttpMethod.PUT, "/reto/events/eventos/crear/poste/**", "/reto/events/files/anexar/poste/**").hasRole("INTERVENTOR")
                 .pathMatchers(HttpMethod.DELETE, "/reto/events/eventos/eliminar/**").hasRole("INTERVENTOR")
                 .pathMatchers("/reto/events/**").hasRole("INTERVENTOR")
 
                 // HISTORICOS RETO FLUTTER
                 .pathMatchers(HttpMethod.GET, "/reto/historicos/historico/listar", "/reto/historicos/historico/listar/**").hasAnyRole("USER", "MODERATOR", "ADMIN")
-
                 /*
                  * .pathMatchers("/api/interventor/**", "/api/gamificacion/**",
                  * "/api/usuarios/**", "/api/suscripciones/**", "/api/respuestas/",
