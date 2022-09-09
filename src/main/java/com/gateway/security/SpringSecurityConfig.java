@@ -243,7 +243,6 @@ public class SpringSecurityConfig {
 
                 // HISTORICOS RETO FLUTTER
                 .pathMatchers(HttpMethod.GET, "/reto/historicos/historico/listar", "/reto/historicos/historico/listar/**").hasAnyRole("USER", "MODERATOR", "ADMIN")
-
                 /*
                  * .pathMatchers("/api/interventor/**", "/api/gamificacion/**",
                  * "/api/usuarios/**", "/api/suscripciones/**", "/api/respuestas/",
