@@ -194,6 +194,9 @@ public class SpringSecurityConfig {
                         "/api/interventor/interventor/eliminarProyectoDefinitivamente/", "/api/interventor/version/eliminar/**")
                 .hasRole("INTERVENTOR")
 
+                // MANAGE FILES
+                .pathMatchers(HttpMethod.GET, "/api/files/**").hasRole("INTERVENTOR")
+
                 // PYTHON
                 .pathMatchers("/api/aggregation/**", "/api/testing/**").permitAll()
 
