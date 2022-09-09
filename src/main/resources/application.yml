@@ -174,6 +174,12 @@ spring:
           - Path=/api/testing/**
         filters:
           - StripPrefix=2
+      - id: manage-files
+        uri: lb://manage-files
+        predicates:
+          - Path=/api/files/**
+        filters:
+          - StripPrefix=2
       - id: autenticacion-reto
         uri: lb://autenticacion-reto
         predicates:
