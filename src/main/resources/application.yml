@@ -228,3 +228,9 @@ spring:
           - Path=/trafico/preprocesamiento/**
         filters:
           - StripPrefix=2
+      - id: prediccion
+        uri: lb://prediccion
+        predicates:
+          - Path=/trafico/prediccion/**
+        filters:
+          - StripPrefix=2
