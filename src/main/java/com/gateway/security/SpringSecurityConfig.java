@@ -253,7 +253,12 @@ public class SpringSecurityConfig {
                  * "/api/usuarios/**", "/api/suscripciones/**", "/api/respuestas/",
                  * "/api/registro/**", "/api/proyectos/**", "/api/notificaciones/**",
                  * "/api/estadistica/**") .hasRole("INTERVENTOR")
-                 */.anyExchange().authenticated().and()
+                 */
+
+                // TRAFICO - PREPROCESAMIENTO
+                .pathMatchers(HttpMethod.GET, "/trafico/preprocesamiento/prueba").permitAll()
+
+                .anyExchange().authenticated().and()
                 .addFilterAt(authenticationFilter, SecurityWebFiltersOrder.AUTHENTICATION).csrf().disable().build();
     }
 
