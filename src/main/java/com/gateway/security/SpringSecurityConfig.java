@@ -256,7 +256,7 @@ public class SpringSecurityConfig {
                  */
 
                 // TRAFICO - PREPROCESAMIENTO
-                .pathMatchers(HttpMethod.GET, "/trafico/preprocesamiento/prueba", "/trafico/preprocesamiento/read/param/standardization").permitAll()
+                .pathMatchers(HttpMethod.GET, "/trafico/preprocesamiento/prueba", "/trafico/preprocesamiento/data/standardization").permitAll()
                 .pathMatchers(HttpMethod.POST,"/trafico/preprocesamiento/save/param/standardization").permitAll()
 
                 .anyExchange().authenticated().and()
