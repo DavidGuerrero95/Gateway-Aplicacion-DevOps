@@ -257,6 +257,7 @@ public class SpringSecurityConfig {
 
                 // TRAFICO - PREPROCESAMIENTO
                 .pathMatchers(HttpMethod.GET, "/trafico/preprocesamiento/prueba").permitAll()
+                .pathMatchers(HttpMethod.POST,"trafico/preprocesamiento/save/param/standardization").permitAll()
 
                 .anyExchange().authenticated().and()
                 .addFilterAt(authenticationFilter, SecurityWebFiltersOrder.AUTHENTICATION).csrf().disable().build();
