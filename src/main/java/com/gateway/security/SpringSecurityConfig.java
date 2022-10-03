@@ -214,7 +214,8 @@ public class SpringSecurityConfig {
                 .pathMatchers(HttpMethod.PUT, "/reto/usuarios/usuarios/editar/**", "/reto/usuarios/usuarios/editar-contrasena/**",
                         "/reto/usuarios/contactos/editar/**", "/reto/usuarios/usuarios/codigo/**")
                 .hasAnyRole("USER", "MODERATOR", "ADMIN")
-                .pathMatchers(HttpMethod.DELETE, "/reto/usuarios/usuarios/eliminar-prueba/**").hasAnyRole("USER", "ADMIN")
+                .pathMatchers(HttpMethod.DELETE, "/reto/usuarios/usuarios/eliminar-prueba/**",
+                        "/reto/usuarios/contactos/eliminar/**").hasAnyRole("USER", "ADMIN")
                 .pathMatchers(HttpMethod.DELETE, "/reto/usuarios/usuarios/eliminar/**").hasRole("INTERVENTOR")
                 .pathMatchers("/reto/usuarios/**").hasRole("INTERVENTOR")
 
@@ -238,12 +239,12 @@ public class SpringSecurityConfig {
 
                 // EVENTOS RETO FLUTTER
                 .pathMatchers(HttpMethod.GET, "/reto/events/eventos/listar", "/reto/events/eventos/listar/usuario/**",
-                        "/reto/events/eventos/listar/poste/**", "/reto/events/eventos/listar/zona/**", "/reto/events/eventos/listar/status/**",
-                        "/reto/events/files/obtener/**")
+                        "/reto/events/eventos/listar/poste/**", "/reto/events/eventos/listar/zona/**", "/reto/events/eventos/listar/status/**")
                 .hasAnyRole("USER", "MODERATOR", "ADMIN")
                 .pathMatchers(HttpMethod.POST, "/reto/events/eventos/crear/usuario/**", "/reto/events/files/anexar/usuarios/**").hasAnyRole("USER", "ADMIN")
                 .pathMatchers(HttpMethod.PUT, "/reto/events/eventos/crear/poste/**", "/reto/events/files/anexar/poste/**").hasRole("INTERVENTOR")
                 .pathMatchers(HttpMethod.DELETE, "/reto/events/eventos/eliminar/**").hasRole("INTERVENTOR")
+                .pathMatchers(HttpMethod.GET,"/reto/events/files/obtener/**").permitAll()
                 .pathMatchers("/reto/events/**").hasRole("INTERVENTOR")
 
                 // HISTORICOS RETO FLUTTER
