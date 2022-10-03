@@ -225,12 +225,12 @@ spring:
       - id: preprocesamiento-seguridad
         uri: lb://preprocesamiento-seguridad
         predicates:
-          - Path=/preprocesamiento/**
+          - Path=/seguridad/preprocesamiento/**
         filters:
           - StripPrefix=2
       - id: prediccion-seguridad
         uri: lb://prediccion-seguridad
         predicates:
-          - Path=/prediccion/**
+          - Path=/seguridad/prediccion/**
         filters:
           - StripPrefix=2
