@@ -257,14 +257,12 @@ public class SpringSecurityConfig {
                  */
 
                 // TRAFICO - PREPROCESAMIENTO
-                .pathMatchers(HttpMethod.GET, "/trafico/preprocesamiento/prueba", "/trafico/preprocesamiento/data/standardization").permitAll()
-                .pathMatchers(HttpMethod.POST,"/trafico/preprocesamiento/save/param/standardization").permitAll()
+                .pathMatchers(HttpMethod.GET, "/preprocesamiento/**").permitAll()
+                .pathMatchers(HttpMethod.POST,"/preprocesamiento/**").permitAll()
 
-                // TRAFICO - PREDICCION
-                .pathMatchers(HttpMethod.GET, "/trafico/prediccion/model/dt", "/trafico/prediccion/model/lr",
-                        "/trafico/prediccion/model/rf","/trafico/prediccion/model/svm-linear").permitAll()
-                .pathMatchers(HttpMethod.POST, "/trafico/prediccion/save/model/dt","/trafico/prediccion/save/model/lr",
-                        "/trafico/prediccion/save/model/rf","/trafico/prediccion/save/model/svm-linear").permitAll()
+                // TRAFICO - PREDICCION - Final
+                .pathMatchers(HttpMethod.GET, "/prediccion/**").permitAll()
+                .pathMatchers(HttpMethod.POST, "/prediccion/**").permitAll()
 
                 .anyExchange().authenticated().and()
                 .addFilterAt(authenticationFilter, SecurityWebFiltersOrder.AUTHENTICATION).csrf().disable().build();
