@@ -222,15 +222,15 @@ spring:
           - Path=/reto/historicos/**
         filters:
           - StripPrefix=2
-      - id: preprocesamiento
-        uri: lb://preprocesamiento
+      - id: preprocesamiento-seguridad
+        uri: lb://preprocesamiento-seguridad
         predicates:
-          - Path=/trafico/preprocesamiento/**
+          - Path=/preprocesamiento/**
         filters:
-          - StripPrefix=2
-      - id: prediccion
-        uri: lb://prediccion
+          - StripPrefix=1
+      - id: prediccion-seguridad
+        uri: lb://prediccion-seguridad
         predicates:
-          - Path=/trafico/prediccion/**
+          - Path=/prediccion/**
         filters:
-          - StripPrefix=2
+          - StripPrefix=1
