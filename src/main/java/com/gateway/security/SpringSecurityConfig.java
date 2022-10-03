@@ -260,7 +260,7 @@ public class SpringSecurityConfig {
                 .pathMatchers(HttpMethod.GET, "/preprocesamiento/**").permitAll()
                 .pathMatchers(HttpMethod.POST,"/preprocesamiento/**").permitAll()
 
-                // TRAFICO - PREDICCION
+                // TRAFICO - PREDICCION - Final
                 .pathMatchers(HttpMethod.GET, "/prediccion/**").permitAll()
                 .pathMatchers(HttpMethod.POST, "/prediccion/**").permitAll()
 
