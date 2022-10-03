@@ -223,13 +223,13 @@ spring:
         filters:
           - StripPrefix=2
       - id: preprocesamiento-seguridad
-        uri: lb://preprocesamiento-seguridad
+        uri: lb://preprocesamiento
         predicates:
           - Path=/preprocesamiento/**
         filters:
           - StripPrefix=1
       - id: prediccion-seguridad
-        uri: lb://prediccion-seguridad
+        uri: lb://prediccion
         predicates:
           - Path=/prediccion/**
         filters:
