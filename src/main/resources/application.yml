@@ -227,10 +227,10 @@ spring:
         predicates:
           - Path=/preprocesamiento/**
         filters:
-          - StripPrefix=1
+          - StripPrefix=2
       - id: prediccion-seguridad
         uri: lb://prediccion-seguridad
         predicates:
           - Path=/prediccion/**
         filters:
-          - StripPrefix=1
+          - StripPrefix=2
