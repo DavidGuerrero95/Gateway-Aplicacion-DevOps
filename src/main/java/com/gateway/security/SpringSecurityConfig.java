@@ -209,7 +209,7 @@ public class SpringSecurityConfig {
                 .pathMatchers(HttpMethod.POST, "/reto/usuarios/registro/primer-usuario/").hasRole("INTERVENTOR")
                 .pathMatchers(HttpMethod.GET, "/reto/usuarios/usuarios/existe/**", "/reto/usuarios/usuarios/preguntar/usuarioExiste").permitAll()
                 .pathMatchers(HttpMethod.GET, "/reto/usuarios/usuarios/listar/").hasAnyRole("INTERVENTOR", "MODERATOR", "ADMIN")
-                .pathMatchers(HttpMethod.GET, "/reto/usuarios/usuarios/encontrar/**")
+                .pathMatchers(HttpMethod.GET, "/reto/usuarios/usuarios/encontrar/**", "/reto/usuarios/contactos/listar/**")
                 .hasAnyRole("USER", "MODERATOR", "ADMIN")
                 .pathMatchers(HttpMethod.PUT, "/reto/usuarios/usuarios/editar/**", "/reto/usuarios/usuarios/editar-contrasena/**",
                         "/reto/usuarios/contactos/editar/**", "/reto/usuarios/usuarios/codigo/**")
