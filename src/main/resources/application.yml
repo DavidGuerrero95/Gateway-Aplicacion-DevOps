@@ -234,3 +234,9 @@ spring:
           - Path=/seguridad/prediccion/**
         filters:
           - StripPrefix=2
+      - id: metricas-datos
+        uri: lb://metricas-datos
+        predicates:
+          - Path=/seguridad/metricas/**
+        filters:
+          - StripPrefix=2

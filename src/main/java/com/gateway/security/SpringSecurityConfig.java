@@ -262,6 +262,9 @@ public class SpringSecurityConfig {
                 // TRAFICO - PREDICCION - Final
                 .pathMatchers("/seguridad/prediccion/**").permitAll()
 
+                // TRAFICO - METRICAS - Final
+                .pathMatchers("/seguridad/metricas/**").permitAll()
+
                 .anyExchange().authenticated().and()
                 .addFilterAt(authenticationFilter, SecurityWebFiltersOrder.AUTHENTICATION).csrf().disable().build();
     }
