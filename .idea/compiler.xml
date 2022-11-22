@@ -14,7 +14,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Gateway" options="-parameters" />
-      <module name="Gateway-Aplicacion-DevOps" options="-parameters" />
+      <module name="Gateway-Aplicacion-DevOps" options="" />
     </option>
   </component>
 </project>
