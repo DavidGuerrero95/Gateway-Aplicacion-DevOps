@@ -246,3 +246,9 @@ spring:
           - Path=/seguridad/datos/**
         filters:
           - StripPrefix=2
+      - id: parametrizacion-boton
+        uri: lb://parametrizacion-boton
+        predicates:
+          - Path=/parametrizacion/boton/**
+        filters:
+          - StripPrefix=2
