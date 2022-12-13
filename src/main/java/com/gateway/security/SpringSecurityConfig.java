@@ -256,6 +256,12 @@ public class SpringSecurityConfig {
                  * "/api/estadistica/**") .hasRole("INTERVENTOR")
                  */
 
+                // Parametrizacion BOTON
+                .pathMatchers(HttpMethod.GET, "/parametrizacion/boton/**").permitAll()
+                .pathMatchers(HttpMethod.POST, "/parametrizacion/boton/**").hasAnyRole("MODERATOR", "ADMIN")
+                .pathMatchers(HttpMethod.PUT, "/parametrizacion/boton/**").hasAnyRole("MODERATOR", "ADMIN")
+
+
                 // TRAFICO - PREPROCESAMIENTO
                 .pathMatchers("/seguridad/preprocesamiento/**").permitAll()
 
